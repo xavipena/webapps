@@ -1,0 +1,296 @@
+/* ------------------------------- VARIABLES CSS  -------------------------------*/
+:root {
+  /* -------------------------- Colors  --------------------------*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --white-color: hsl(0, 0%, 78%);
+  --black-color: hsl(0, 0%, 21%);
+  /* -------------------------- Font and typography  --------------------------*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --h1-font-size: 1.75rem;
+  --normal-font-size: 1rem;
+  --button-font-size: 1.5rem;
+  --small-font-size: .7rem;
+  /* -------------------------- Font weight  --------------------------*/
+  --font-medium: 500;
+}
+
+/* ------------------------------- BASE  -------------------------------*/
+*,
+*::before,
+*::after {
+      box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: lightgray; 
+    background: #1f1f1f;
+} 
+input {
+    font-size: var(--normal-font-size);
+}
+
+select {
+    font-size: var(--button-font-size);
+    outline: 1px solid #fff;
+    border-radius: 10px;
+    width: 100%;
+}
+input, 
+button {
+    font-size: var(--button-font-size);
+    border: none;
+    outline: none;
+}
+
+header {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+    padding-block: 20px;
+    
+    & img {
+        max-width: 100px;
+        height: auto;
+	 }
+}
+main {
+    width: 100%;
+}
+footer {
+	display: flex;
+    flex-direction: column;
+    width: 100%;
+	padding-block: 8px;
+
+    & hr {
+        width: 100%;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ------------------------------- BREAKPOINTS  -------------------------------*/
+
+/* ------------------------------- TABLES  ----------------------------*/
+
+td.number {
+	text-align: right;
+}
+
+/* ------------------------------- APP  -------------------------------*/
+.appPageContainer {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+}
+
+.app-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.app-form, .app-card {
+	display: flex;
+	flex-direction: column;
+    gap: 20px;
+    width: 98%;
+    position: relative;
+    background-color: #3b423e;
+    border: 1px solid #bbb;
+    margin-inline: 5px;
+    margin-bottom: 25px;
+    padding: 25px 15px 25px 15px;
+    border-radius: 1rem;
+    backdrop-filter: blur(8px);
+}
+.app-title {
+    text-align: center;
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: 2rem;
+}
+.app-content, .app-box {
+    display: grid;
+}
+.app-content {
+    row-gap: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+.app-box {
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    column-gap: 0.75rem;
+    border-bottom: 2px solid var(--white-color);
+}
+.app-select {
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    column-gap: 0.75rem;
+    font-size: var(--button-font-size);
+}
+.app-icon, .app-eye {
+    font-size: 1.25rem;
+}
+.app-input {
+    width: 100%;
+    padding-block: 0.8rem;
+    background: none;
+    color: var(--white-color);
+    position: relative;
+    z-index: 1;
+}
+.app-box-input {
+    position: relative;
+}
+.app-label {
+    position: absolute;
+    left: 0;
+    top: 13px;
+    font-weight: var(--font-medium);
+    transition: top 0.3s, font-size 0.3s;
+}
+.app-eye {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 10;
+    cursor: pointer;
+}
+.app-box:nth-child(2) input {
+    padding-right: 1.8rem;
+}
+.app-check, .app-check-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.app-check {
+    margin-bottom: 1.5rem;
+}
+.app-check-label, .app-forgot, .app-register {
+    font-size: var(--small-font-size);
+}
+.app-check-group {
+    column-gap: 0.5rem;
+}
+.app-check-input {
+    width: 16px;
+    height: 16px;
+}
+.app-button {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #bbb;
+    font-weight: var(--font-medium);
+    cursor: pointer;
+}
+  
+.app-button:hover {
+    background-color: #ddd;
+}
+  /* Input focus move up label */
+.app-input:focus + .app-label {
+    top: -12px;
+    font-size: var(--small-font-size);
+}
+  
+  /* Input focus sticky top label */
+.app-input:not(:placeholder-shown).app-input:not(:focus) + .app-label {
+    top: -12px;
+    font-size: var(--small-font-size);
+}
+
+ /* ------------------------------------ */ 
+
+.form-select {
+    width: 100%;
+    padding-block: 0.8rem;
+    background: none;
+    color: var(--white-color);
+    position: relative;
+    z-index: 1;
+}
+.appButton
+{
+    background-color: rgb(151, 153, 149);
+    color: black;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 5px;
+    transition-duration: 0.4s;
+}
+.appButton:hover 
+{
+    background-color: #000;
+    color: white;
+}
+.switch {
+
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;    
+}
+.cardCircle {
+
+    border-radius: 50%;
+    background: #62a025;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+}
+.cardTitle {
+
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 0px;
+    opacity: 0.8;
+}
+
+/*  cards in app */
+
+.cardShort {
+
+    width: 100%;
+    padding: 5px;
+}
+.round_transparent {
+    background-color: rgb(73, 90, 68);
+    border-radius: 10px; /* future proofing */
+    border: 1px solid #eceff14d;
+    padding: 10px;
+    position: relative;
+    text-align:left;
+    /* for hovering (mouse out) */
+    transition: 0.3s;
+}
+.ilogo {
+    border-radius: 10px;
+    background-color: #fff;
+    width: 80px;
+    margin-right: 10px;
+}
+.subtitleText {
+    font-size: var(--small-font-size);
+}
+.sendButton {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+.appFooter {
+    width: 432px;
+    margin: auto;
+}

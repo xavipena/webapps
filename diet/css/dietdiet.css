@@ -1,0 +1,801 @@
+/*  elements
+    ------------------
+    */
+fieldset {
+    border-radius: 5px;
+    max-width: fit-content;
+}
+select {
+    background-color: #9abb7a;
+}
+textarea {
+    background-color: #b6c4a8;
+}
+input {
+    margin-top: 5px;
+    background-color: #b6c4a8;
+}
+input[type=button] {
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.2s ease-in-out;
+    background-color: #79b839;
+}
+input[type=submit] {
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.2s ease-in-out;
+    background-color: #79b839;
+}
+input:hover {
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(167, 241, 154, 0.4);
+    transition: all 0.5s ease-in-out;
+}
+input:hover[type=button] {
+    cursor: pointer;
+    color: #dcdcdc;
+    box-shadow: 0 5px 15px rgba(167, 241, 154, 0.4);
+    transition: all 0.5s ease-in-out;
+}
+input:hover[type=submit] {
+    cursor: pointer;
+    color: #dcdcdc;
+    box-shadow: 0 5px 15px rgba(167, 241, 154, 0.4);
+    transition: all 0.5s ease-in-out;
+}
+.number-input {
+    max-width: 100px;
+    text-align: right;
+}
+/*  containers
+    ------------------
+*/
+.RightContainer {
+    position: relative;
+    left: 25px;
+    min-height: 100vh;
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-rows: 55px 1fr auto;
+}
+
+.dietPageContainer {
+    width:90%; 
+    margin:auto; 
+    font-size:10pt;
+}
+.product {
+    border-radius: 10px;
+    background-color: #fff;
+    width: 90px;
+    height: 90px;
+}
+.productFull {
+    border-radius: 10px;
+    background-color: #fff;
+    width: 150px;
+    height: 150px;
+}
+
+.brand {
+    border-radius: 10px;
+    background-color: #b7b7b7;
+    width: 100px;
+    height: 100px;
+}
+.ilogo {
+    border-radius: 10px;
+    background-color: #fff;
+    width: 80px;
+}
+
+/* forms */
+
+div.formClass {
+    display:grid;
+    grid-template-columns: max-content max-content;
+    grid-gap:5px;
+}
+div.formClass label       { text-align:right; vertical-align: middle; }
+div.formClass label:after { content: ":"; }
+div.formClass fieldset    { text-align: left; }
+
+/*  tooltip class 
+    ------------------
+    */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgb(36, 36, 36);
+    color: #fff;
+    border: 1px solid #fffb00;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    left: 0px;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* 
+    redefined styles
+*/
+td.number {
+	text-align: right;
+}
+td.redNumber {
+	text-align: right;
+    color: red;
+}
+
+/* selector menu */
+
+.amanida {
+    width: 250px;
+} 
+ul.amanida {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    margin-left: 10%;
+    /*position: absolute;*/
+}
+ul.amanida li {
+    list-style-type: none;
+    color: #fff;
+    font-family: sans-serif;
+    padding: 8px 0;
+}
+ul.amanida li a {
+    text-decoration: none;
+}
+ul.amanida li a:hover {
+    border-radius: 10px 10px 10px 10px;
+    background-color: #62a025;
+    border: 1px #384b24 solid;
+    text-decoration: none;
+    padding: 5px 8px;
+}
+.amanida li:first-of-type a:hover {
+    border-radius: 10px 10px 10px 10px;
+    background-color: #62a025;
+    border: 1px #384b24 solid;
+    text-decoration: none;
+    padding: 5px 8px;
+}
+
+/* messages 
+   ------------------------------------------------*/
+.warning {
+
+    background-color: rgb(96, 48, 48);
+    border-radius: 10px;
+    border: 1px solid #e6f1a933;
+    padding: 2px 10px 5px 10px;
+    color: rgb(251, 170, 170);
+    margin: 10px 0px;
+}
+
+/* text card 
+   ------------------------------------------------*/
+
+.textCard {
+
+    width: 500px;
+    min-height: 180px;
+    height: fit-content;
+    background-color: rgba(66, 66, 66, 0.4);
+    border-radius: 10px;
+    border: 1px solid #eceff133;
+    padding: 10px;
+    margin: 3px;
+    position: relative;
+    text-align:left;
+    /* for hovering (mouse out) */
+    transition: 0.3s;
+}
+.textCard:hover {
+
+    background-color: rgba(100, 100, 100, 0.4);
+    transition: 0.3s;
+    border-color: #e1e1e1;
+}
+
+.mite {
+
+    width: 200px;
+    height: 150px;
+    background-color: rgba(69, 35, 35, 0.4);
+}
+.expl {
+
+    width: 600px;
+    height: 150px;
+    background-color: rgba(39, 69, 35, 0.4);
+}
+
+.box {
+
+    width: 300px;
+    height: 150px;
+}
+
+/* cover card 
+   ------------------------------------------------*/
+
+.cardContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5em;
+}
+.coverCard {
+
+    width: 350px;
+    height: 400px;
+    background-color: rgba(66, 66, 66, 0.4);
+    border-radius: 10px;
+    border: 1px solid #eceff133;
+    padding: 10px;
+    margin: 3px;
+    position: relative;
+    text-align:left;
+    /* for hovering (mouse out) */
+    transition: 0.3s;
+}
+.bright {
+    background-color: rgba(78, 95, 71, 0.4);
+}
+
+.coverCard:hover {
+
+    background-color: rgba(100, 100, 100, 0.4);
+    transition: 0.3s;
+    border-color: #e1e1e1;
+}
+.coverImage {
+    
+    display: block;
+    width: 130px;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 1px solid #eceff133;
+}
+.coverCardText {
+
+    font-family: Verdana, Arial rounded;
+    color: lightgray;
+    font-size: 12px;
+    text-decoration: none;
+}
+.bigger {
+
+    font-size: 14px;
+}
+
+.cardCircle {
+
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: #62a025;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+}
+.cardTitle {
+
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 0px;
+    opacity: 0.8;
+}
+.coverCard a:hover a:visited a:active a:link {
+
+    text-decoration: none;
+}
+
+/* product card 
+   ------------------------------------------------*/
+
+.productCard {
+
+    width: 350px;
+    height: 100px;
+    padding: 5px;
+    margin: 3px;
+    background-color: rgb(66, 66, 66, 0.8);
+    border-radius: 10px;
+    border: 1px solid #eceff133;
+}
+
+.col1 {
+    background-color: #444343;
+}
+.col2 {
+    background-color: #443c3c;
+}
+.col3 {
+    background-color: #4d3636;
+}
+
+/* card for manual 
+   ------------------------------------------------*/
+
+.card {
+    position: relative;
+}
+.cardSqr {
+    width: 135px;
+    height: 135px;
+    padding: 5px;
+}
+.cardNumber {
+    width: 400px;
+    height: 135px;
+    padding: 5px;
+}
+/* center */
+.textContainer {
+    width: 300px; 
+    height: 130px; 
+}
+.textCentered {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* card for selector */
+
+.cardSelector {
+    position: relative;
+    width: 300px;
+    height: 100px;
+    padding: 5px;
+}
+
+.cardSelectorLarge {
+    position: relative;
+    width: 600px;
+    height: 100px;
+    padding: 5px;
+}
+
+.next {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+.next > img {
+    width: 40px;
+}
+
+.details {
+    position: relative;
+/*    right: 80px;
+    top: 200px;
+    */
+    width: 300px;
+    padding: 0 20px;
+    background-color: rgb(66, 66, 66);
+    border-radius: 10px;
+    border: 1px solid #eceff133;
+}
+.more {
+    top: 560px;
+}
+.details-inline {
+    width: 220px;
+    padding: 0 15px;
+    background-color: rgb(66, 66, 66, 0.6);
+    border-radius: 10px;
+    border: 1px solid #eceff133;
+}
+.parent-div-150 {
+    width: 150px;
+    height: 100px;
+    margin: 0 auto;
+}
+.center-vertical {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.showError {
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+    border: white 1px solid;
+    color: white;
+    background-color: rgb(166, 89, 89);
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* other type of cards
+--------------------------------------------------- */
+.round_disabled {
+
+    background-color: rgba(65, 79, 57, 0.4);
+    border-radius: 10px;
+    border: 1px solid #a1a1a133;
+    padding: 2px 5px 5px 10px;
+    position: relative;
+    text-align: left;
+    color: gray;
+}
+.round_disabled .subtitleText {
+
+    color:gray;
+}
+.round_disabled img {
+
+    opacity: 0.5;
+}
+
+.round_menu {
+    background-color: rgba(65, 79, 57, 0.4);
+    border-radius: 10px;
+    border: 1px solid #eceff133;
+    padding: 2px 5px 5px 10px;
+    position: relative;
+    text-align:left;
+    /* for hovering (mouse out) */
+    transition: 0.3s;
+
+}
+.round_menu:hover {
+
+    background-color: rgba(100, 124, 89, 0.4);
+    transition: 0.3s;
+}
+
+/*  dietCard table
+    --------------------------------------------------- */
+table.dietcard 
+{
+	border-collapse: collapse;
+	border: 1px solid #fff;
+	border-style: hidden;
+}
+
+table.dietcard caption {
+	background-color: #8aad2a;
+	color: #000;
+	font-size: x-large;
+	font-weight: bold;
+	letter-spacing: .3em;
+}
+
+table.dietcard thead th {
+	padding: 8px;
+	background-color: #8bc34a;
+	font-size: large;
+}
+
+table.dietcard thead th#thCol1,
+table.dietcard thead th#thCol2, 
+table.dietcard thead th#thCol3 {
+	width: 20%;	
+}
+
+table.dietcard thead th#thCol4 {
+	width: 40%;
+}
+
+table.dietcard th, table.dietcard td {
+	padding: 5px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #f79646 #ccc;
+    vertical-align: middle;
+}
+
+table.dietcard td.number {
+	text-align: right;
+}
+
+table.dietcard tbody th {
+	text-align: left;
+	font-weight: normal;
+}
+
+table.dietcard tfoot {
+	font-weight: bold;
+	font-size: large;
+	background-color: #687886;
+	color: #fff;
+}
+
+table.dietcard tr.even {
+	background-color: #666;
+}
+
+table.dietcard tr.odd {
+	background-color: #444;
+}
+
+/*  3D MENU  
+    -------------------------------------------------- */
+.inner {
+    position: relative;
+    height: 80px;
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+/* mobile */
+
+@media screen and (max-device-width: 480px) 
+{
+    .inner {
+        position: relative;
+        height: 130px;
+    }
+}
+
+/* mobile tablet device */
+
+@media screen and (min-device-width: 480px) and (max-device-width: 1024px) 
+{
+    .inner {
+        position: relative;
+        height: 130px;
+    }
+}
+
+/* override previous styles*/
+.inner ul {
+    list-style: none;
+    margin-left: 0px;
+}
+
+/* basic menu styles */
+
+:root {
+    --boxSize: 25px;
+    --negSize: -25px;
+}
+.threed-menu {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.threed-menu li {
+    display: inline-block;
+    list-style: square;
+    width: 120px;
+}
+
+.threed-menu li a {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    font-family: "Ubuntu", sans-serif;
+    /*font-smoothing: antialiased;*/
+    overflow: visible;
+    line-height: 20px;
+    font-size: 18px;
+    padding: 15px 10px;
+    margin-right: 2px;
+}
+
+/* animation domination */
+.threed-item {
+    perspective: 200px;
+    transition: all .07s linear;
+    position: relative;
+    cursor: pointer;
+}
+/* complete the animation! */
+.threed-item:hover .threed-item-box, 
+.threed-item:focus .threed-item-box {
+    transform: translateZ(var(--negSize)) rotateX(90deg);
+}
+
+.threed-item-box {
+    transition: all .3s ease-out;
+    transform: translatez(var(--negSize));
+    transform-style: preserve-3d;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.threed-front, .threed-back {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 15px 10px;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+.threed-front {
+    transform: rotatex(0deg) translatez(var(--boxSize));	
+    color: rgb(99, 172, 16);
+    background: rgb(74, 74, 74);	
+}
+
+.threed-back {
+    transform: rotatex(-90deg) translatez(var(--boxSize));	
+    color: white;
+    background: rgb(84, 146, 14);	
+}
+/*  end 3D  */
+
+.imgIcon {
+    height: 30px;
+    border-radius: 3px;
+}
+.divIcon {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 50%;
+    position: relative;
+    left: 50%;
+    z-index: 1;
+}
+.divIconButtons {
+    position: relative;
+    top: -45px;
+}
+.iconForm {
+    height: 56px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    /* darken content */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #555;
+    width: 500px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+}
+
+/* Page loader */
+
+/* From Uiverse.io by xXJollyHAKERXx 
+    https://uiverse.io/xXJollyHAKERXx/lucky-falcon-75
+    BLACH_HOLE
+   ----------------------------------------------------
+*/ 
+.spinner {
+    background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
+    width: 100px;
+    height: 100px;
+    animation: spinning82341 1.7s linear infinite;
+    text-align: center;
+    border-radius: 50px;
+    filter: blur(1px);
+    box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+}
+
+.spinner1 {
+    background-color: rgb(36, 36, 36);
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    filter: blur(10px);
+}
+
+@keyframes spinning82341 {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#loading {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+    background-color: #555;
+    z-index: 99;
+}
+
+/* From Uiverse.io by xXJollyHAKERXx 
+    https://uiverse.io/mrpumps31232/strange-dragonfly-94
+    DRAGONFLY
+   ----------------------------------------------------
+*/ 
+/* From Uiverse.io by mrpumps31232 */ 
+#loading-wave {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+    background-color: #555;
+    z-index: 99;
+}
+  
+.loading-bar {
+    width: 20px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #66db34;
+    border-radius: 5px;
+    animation: loading-wave-animation 1s ease-in-out infinite;
+}
+
+.loading-bar:nth-child(2) {
+    animation-delay: 0.1s;
+}
+  
+.loading-bar:nth-child(3) {
+    animation-delay: 0.2s;
+}
+  
+.loading-bar:nth-child(4) {
+    animation-delay: 0.3s;
+}
+  
+@keyframes loading-wave-animation {
+    0% {
+      height: 10px;
+    }
+  
+    50% {
+      height: 50px;
+    }
+  
+    100% {
+      height: 10px;
+    }
+}
+  

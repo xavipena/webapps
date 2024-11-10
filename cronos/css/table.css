@@ -1,0 +1,62 @@
+table.pwtable 
+{
+	border-collapse: collapse;
+	border: 1px solid #fff; /*for older IE*/
+	border-style: hidden;
+}
+
+table.pwtable caption {
+	background-color: #8aad2a;
+	color: #000;
+	font-size: x-large;
+	font-weight: bold;
+	letter-spacing: .3em;
+}
+
+table.pwtable thead th {
+	padding: 8px;
+	background-color: #8bc34a;
+	font-size: large;
+}
+
+table.pwtable thead th#thCol1,
+table.pwtable thead th#thCol2, 
+table.pwtable thead th#thCol3 {
+	width: 20%;	
+}
+
+table.pwtable thead th#thCol4 {
+	width: 40%;
+}
+
+table.pwtable th, table.pwtable td {
+	padding: 3px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #f79646 #ccc;
+    vertical-align: middle;
+}
+
+table.pwtable td.number {
+	text-align: right;
+}
+
+table.pwtable tbody th {
+	text-align: left;
+	font-weight: normal;
+}
+
+table.pwtable tfoot {
+	font-weight: bold;
+	font-size: large;
+	background-color: #687886;
+	color: #fff;
+}
+
+table.pwtable tr.even {
+	background-color: #666;
+}
+
+table.pwtable tr.odd {
+	background-color: #444;
+}

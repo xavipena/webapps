@@ -1,0 +1,127 @@
+body {
+	color: lightgray; 
+	background: #1f1f1f;
+    font-family: Verdana, Arial rounded;
+    font-size: 14px;
+}
+#main {
+	width: 720px;
+	padding: 10px;
+	margin: auto;
+    background-color: #777;
+}
+/*  elements
+    ------------------
+    */
+fieldset {
+    border-radius: 5px;
+    max-width: fit-content;
+}
+input {
+    margin-top: 5px;
+}
+.number-input {
+    max-width: 100px;
+}
+/*  containers
+    ------------------
+    */
+.dietPageContainer {
+    width:90%; 
+    margin:auto; 
+    font-size:10pt;
+}
+.product {
+    border-radius: 10px;
+    background-color: #fff;
+    width: 150px;
+    height: 150px;
+}
+
+.brand {
+    border-radius: 10px;
+    background-color: #b7b7b7;
+    width: 100px;
+    height: 100px;
+}
+.ilogo {
+    border-radius: 10px;
+    background-color: #fff;
+    width: 80px;
+}
+
+/* 
+    redefined styles
+*/
+td.number {
+	text-align: right;
+}
+td.redNumber {
+	text-align: right;
+    color: red;
+}
+
+/*  DIEtCARD table
+    --------------------------------------------------- */
+table.dietcard 
+{
+	border-collapse: collapse;
+	border: 1px solid #fff;
+	border-style: hidden;
+}
+
+table.dietcard caption {
+	background-color: #8aad2a;
+	color: #000;
+	font-size: x-large;
+	font-weight: bold;
+	letter-spacing: .3em;
+}
+
+table.dietcard thead th {
+	padding: 8px;
+	background-color: #8bc34a;
+	font-size: large;
+}
+
+table.dietcard thead th#thCol1,
+table.dietcard thead th#thCol2, 
+table.dietcard thead th#thCol3 {
+	width: 20%;	
+}
+
+table.dietcard thead th#thCol4 {
+	width: 40%;
+}
+
+table.dietcard th, table.dietcard td {
+	padding: 5px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #f79646 #ccc;
+    vertical-align: middle;
+}
+
+table.dietcard td.number {
+	text-align: right;
+}
+
+table.dietcard tbody th {
+	text-align: left;
+	font-weight: normal;
+}
+
+table.dietcard tfoot {
+	font-weight: bold;
+	font-size: large;
+	background-color: #687886;
+	color: #fff;
+}
+
+table.dietcard tr.even {
+	background-color: #666;
+}
+
+table.dietcard tr.odd {
+	background-color: #444;
+}

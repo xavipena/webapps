@@ -1,0 +1,86 @@
+/*  ---------------------------------
+    Footer related 
+    ---------------------------------
+    */
+.footer
+{
+    position: relative;
+    width: 65%;
+    left: 18%;
+    top: 50px;
+}
+.toBottom
+{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.signature
+{
+    position: absolute;
+    top: 40px;
+    left: 0px;
+}
+
+/*  ---------------------------------
+    Sliders 
+    ---------------------------------
+    */
+.sliderList 
+{
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: space-between;*/
+    list-style: none;
+    padding: 0;
+}
+.sliderList li 
+{
+    /*flex-basis: calc(25% - 10px);*/
+    width: 50px;
+    background-color: #e7e6e6;
+    padding: 10px 5px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.sliderList li:hover:not(.active) 
+{
+	background-color: #b0b0b0;
+}
+li.current 
+{
+    background-color: #313131;
+    color: #fff;
+}
+
+/*  ---------------------------------
+    Pages navigation 
+    ---------------------------------
+    */
+.navPager
+{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    width: 500px;
+    margin: auto;
+    padding: 0;
+}
+.navPager li 
+{
+    /*flex-basis: calc(25% - 10px);*/
+    width: 100px;
+    background-color: #e7e6e6;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.navPager li:hover:not(.active) 
+{
+    background-color: #b0b0b0;
+}
+li.current 
+{
+    background-color: #313131;
+    color: #fff;
+}
+    

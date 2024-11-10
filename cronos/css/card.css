@@ -1,0 +1,73 @@
+/*  ---------------------------------
+    Cards 
+    ---------------------------------
+    */
+.round_transparent {
+	background-color: rgba(66, 66, 66, 0.4);
+	border-radius: 10px; /* future proofing */
+	padding: 5px 5px 5px 10px;
+	position: relative;
+	text-align:left;
+	border: 1px solid #eceff133;
+	transition: 0.3s;
+}
+.round_transparent:hover {
+
+    background-color: rgba(34, 34, 30, 0.4);
+    transition: 0.3s;
+}
+.smallText
+{
+	font-size: 0.8em;
+}
+.card
+{
+    width: 350px;
+    height: 110px;
+    margin: 5px;
+	color: lightgray;
+}
+.doc {
+	float: right;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	flex-wrap: nowrap;
+	right: 10px;
+	top: 5px;
+}
+.docItem
+{
+	flex: none;
+	align-self: flex-start;
+}
+.docItem > div
+{
+	/* nested div to reposition element */
+	position: relative;
+	top: 10px;
+}
+.docMulti {
+	display: inline-block;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	width: 300px;
+	text-align: right;
+    z-index: 1;
+}
+.docRight {
+	right: 5px;
+}
+.docTxt {
+	float: left;
+	position: relative;
+	left: 10px;
+	top: 10px;
+}
+.docTxtTop {
+	display: inline-block;
+	position: absolute;
+	left: 130px;
+	top: 5px;
+}

@@ -1,0 +1,94 @@
+body {
+	color: lightgray; 
+	background: #1f1f1f;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";	
+    font-size: 14px;
+}
+#main {
+	width: 720px;
+	padding: 10px;
+	margin: auto;
+    background-color: #777;
+}
+
+/* New table format 
+
+table.twoColumns {
+	border-collapse: collapse;
+	border: 1px solid #fff;
+	border-style: hidden;
+}
+
+table.twoColumns td.number {
+	text-align: right;
+}
+*/
+.softBorder {
+	border: 1px solid #666;
+}
+.even {
+	background-color: #414141;
+}
+
+.odd {
+	background-color: #2c2c2c;
+}
+.roundedLink {
+    background-color: rgba(121, 121, 121, 0.4);
+    border-radius: 10px; /* future proofing */
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 3px 0px 0px 0px;
+    padding: 3px;
+    border-style: solid;
+    border-color: #999;
+}
+.circled
+{
+	border-radius: 50%;
+    border-style: solid;
+    border-color: #fff;
+}
+.squared
+{
+	border-radius: 10px;
+    border-style: solid;
+    border-color: #fff;
+}
+
+ /* bar menu */
+.menu {
+	position: relative;
+	margin: 5px 0px 0px 0px;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+	border-radius: 10px;
+	min-height: 64px;
+}
+.menu li {
+	list-style-type: none;
+	float: left;
+}
+.menu li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+.menu li a:hover:not(.active) {
+	padding: 14px 16px;
+	background-color: #111;
+	border: 1px solid rgb(58, 58, 58);
+}
+.menu li:first-of-type a:hover {
+	padding: 14px 16px;
+	background-color: #111;
+}
+.menu li a.active {
+	float: right;
+}
+.active {
+	background-color: #4CAF50;
+}

@@ -1,0 +1,42 @@
+CREATE TABLE `diet_ingredients` (
+  `IDingredient` int NOT NULL,
+  `IDcat` int NOT NULL,
+  `name` varchar(150) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `description` text CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `status` varchar(1) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL DEFAULT 'A',
+  `grams` int NOT NULL,
+  `energy` int NOT NULL,
+  `fat` decimal(8,2) NOT NULL,
+  `saturates` decimal(8,2) NOT NULL,
+  `carbohydrate` decimal(8,2) NOT NULL,
+  `sugar` decimal(8,2) NOT NULL,
+  `fibre` decimal(8,2) NOT NULL,
+  `protein` decimal(8,2) NOT NULL,
+  `salt` decimal(8,2) NOT NULL,
+  `alcohol` decimal(8,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+CREATE TABLE `diet_product_data` (
+  `IDproduct` int NOT NULL,
+  `unit` enum('Standard','Ration') CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+
+3 ous
+1 iogurt de llimona
+Mig got del iogurt d’oli
+1 got del iogurt de sucre
+2 gots del iogurt de farina
+El suc d’una llimona i la pell
+1 sobre de levadira
+
+
+
+    1 yogur natural (125 g)
+    1 medida de yogur de aceite (+/- 90 g)
+    2 medidas de yogur de azúcar (+/- 320 g)
+    3 medidas de yogur de harina (+/- 150 g)
+    3 huevos
+    1 sobre de levadura (16 g)
+    1 cucharada de mantequilla para untar el molde (+/- 10 g)
+
