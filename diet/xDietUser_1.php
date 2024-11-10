@@ -315,7 +315,7 @@
             }
             echo "</div><br>";
             
-            echo "<div class='container'>";
+            echo "<div class='container atop'>";
                 echo "<div class='table details-inline'>".GetUserData($db)."</div>";
                 echo "<div class='table details-inline'>".ListWeight($db);
                 echo "  <div class='parent-div-150'><input class='center-vertical' type='button' onclick='location.href=\"xDietTrace.php\"' value='".locale("strPlotWeight")."'>";

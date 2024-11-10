@@ -1,8 +1,8 @@
 <?php
     session_start();
-    include ".././includes/dbConnect.inc.php";
-    include "./includes/app.security.inc.php";
-    include "./includes/app.header.inc.php";
+    include "../includes/dbConnect.inc.php";
+    include "../includes/app.security.inc.php";
+    include "../includes/app.header.inc.php";
 
     if (empty($_SESSION['diet_user'])) header("location: user.php");
 ?>
@@ -25,7 +25,7 @@ if (empty($_SESSION["meal"]))
 
 //--- functions -----------------------
 
-include "./includes/dietFunctions.inc.php";
+include "../includes/dietFunctions.inc.php";
 $selectPerImage = GetSettingValue($db, "3");
 
 //--- Content -------------------------
@@ -51,5 +51,5 @@ $selectPerImage = GetSettingValue($db, "3");
             </form>
         </main>
 <?php 
-    include "./includes/app.footer.inc.php"; 
+    include "../includes/app.footer.inc.php"; 
 ?>

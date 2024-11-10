@@ -3,8 +3,8 @@
 Update user weight
 */
 session_start();
-include '.././includes/dbConnect.inc.php';
-include "./includes/app.security.inc.php";
+include '../includes/dbConnect.inc.php';
+include "../includes/app.security.inc.php";
 
 $mea = $clean['mea'];
 $prd = $clean['prd'];

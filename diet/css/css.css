@@ -1,0 +1,132 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /*height: 100%;*/
+    background-color:#1f1f1f ;
+}
+
+#l-menu {
+    height: 100%;
+    position: fixed;
+    background-color: #77a04d;
+    width: 300px;
+    transition: 1000ms all cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translateX(-100%);
+    left: 60px;
+    z-index: 10; /* using 0, 1 in app styles */
+}
+
+#l-menu.expanded {
+    transform: translateX(0%);
+    left: 0px;
+}
+
+.l-menu-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#blob {
+    top: 0;
+    z-index: -1;
+    right: 60px;
+    transform: translateX(100%);
+    height: 100%;
+    position: absolute;
+}
+
+#blob-path {
+    height: 100%;
+    fill:  #77a04d;
+}
+
+.hamburger {
+    right: 20px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;	
+}
+
+.hamburger .line {
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hamburger .line:nth-child(2) {
+    top: 50%;
+    margin-top: -2px;
+}
+
+.hamburger .line:nth-child(3) {
+    bottom: 0;
+}
+
+/* ul */
+.l-menu-inner ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 80%;
+    margin-left: 10%;
+    /*position: absolute;*/
+}
+.l-menu-inner ul li {
+    list-style-type: none;
+    color: #fff;
+    font-family: sans-serif;
+    padding: 8px 0;
+}
+.l-menu-inner ul li a {
+    text-decoration: none;
+}
+.l-menu-inner ul li a:hover {
+    border-radius: 10px 10px 10px 10px;
+    background-color: #62a025;
+    border: 1px #384b24 solid;
+    text-decoration: none;
+    padding: 5px 8px;
+}
+.l-menu-inner li:first-of-type a:hover {
+    background-color: transparent;
+    border: 0px;
+}
+
+.topLogo {
+    width: 80%;
+    text-align: center;
+    background-color: #282828;
+}
+.imgLogo {
+    width: 80px;
+    align-items: center;
+}
+.oldRightContainer {
+    position: absolute;
+    left: 80px;
+    width: 90vw;
+}
+.RightContainer {
+    min-height: 100vh;
+    width: 90%;
+    /* margin: auto; */
+    margin-left: 100px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* mobile */
+
+@media screen and (max-device-width: 480px) 
+{
+    .RightContainer {
+        position: absolute;
+        left: 10px;
+        width: 100vw;
+    }
+}

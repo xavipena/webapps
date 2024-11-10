@@ -1,8 +1,8 @@
 <?php
     session_start();
-    include ".././includes/dbConnect.inc.php";
-    include "./includes/app.security.inc.php";
-    include "./includes/app.header.inc.php";
+    include "../includes/dbConnect.inc.php";
+    include "../includes/app.security.inc.php";
+    include "../includes/app.header.inc.php";
 
     $user = empty($_SESSION['diet_user']) ? "" : $_SESSION['diet_user'];
     if ($user == "")
@@ -56,7 +56,7 @@ function UserSelector($db, $current)
             </form>
         </main>
 <?php 
-    include "./includes/app.footer.inc.php"; 
+    include "../includes/app.footer.inc.php"; 
 
 // --- end content -------------------
 ?>

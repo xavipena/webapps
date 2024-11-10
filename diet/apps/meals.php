@@ -1,8 +1,8 @@
 <?php
     session_start();
-    include ".././includes/dbConnect.inc.php";
-    include "./includes/app.security.inc.php";
-    include "./includes/app.header.inc.php";
+    include "../includes/dbConnect.inc.php";
+    include "../includes/app.security.inc.php";
+    include "../includes/app.header.inc.php";
 
     if (empty($_SESSION['diet_user'])) header("location: user.php");
 ?>
@@ -30,7 +30,7 @@
 
 //--- Settings ------------------------
 
-include "./includes/dietFunctions.inc.php";
+include "../includes/dietFunctions.inc.php";
 $selectPerImage = GetSettingValue($db, "3");
 
 //--- new content ---------------------
@@ -178,7 +178,7 @@ function ListProducts($db) {
             <button type="button" class="app-button" onclick="location.href='menu.php'">Menú</button>
         </div>
     </main>
-        <?php include "./includes/app.footer.inc.php"; ?>
+        <?php include "../includes/app.footer.inc.php"; ?>
 	</div>
 <?php
 

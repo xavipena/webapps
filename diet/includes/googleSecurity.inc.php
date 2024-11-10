@@ -6,13 +6,9 @@
     $isWebApp = empty($isWebApp) ? false : true;
 
     // Apps with own login procedure
+    // diet has it's own login
     //-----------------------------------------------------------------------------
-    switch ($page) {
-
-        case "diet":
-            $canProceed = TRUE;
-            break;
-    }
+    $canProceed = TRUE;
 
     // Sanitize input
     //-----------------------------------------------------------------------------
@@ -42,7 +38,7 @@
         $allowed = !empty($_SESSION['allowed']) ? $allowed = $_SESSION['allowed'] : "";
         $canProceed = $allowed == "yes";
 
-        require '../x/PasswordHash.php';
+        require '../login/PasswordHash.php';
 
         //  trace the IP address
         //-----------------------------------------------------------------------------

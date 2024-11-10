@@ -1,8 +1,8 @@
 # webapps
 Web applications
 
-Cronos
+# Cronos
 Webapp to search and visualize images stored in Piwigo database
 
-Diet
+# Diet
 Webapp to track daily meals and calculate calories ingesta

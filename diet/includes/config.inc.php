@@ -22,33 +22,8 @@ define ('WEB_URL',                  'https://diaridigital.net');
 // -----------------------------
 
 define ('PAGE_DIAGRAMS',    1 );
-define ('PAGE_QUOTES',      2);
-define ('PAGE_STORIES',     4 );
-define ('PAGE_WLIST',       5 );
-define ('PAGE_IMAGE',       6 );
-define ('PAGE_SOFTWARE',    10);
-define ('PAGE_SAGAS',       11);
-define ('PAGE_PIANO',       16);
-define ('PAGE_SMEDIA',      17); 
 define ('PAGE_DIET',        19);
-define ('PAGE_CSJ',         20);
-define ('PAGE_CHKLISTS',    21);
-define ('PAGE_PROJECTS',    22);
-define ('PAGE_ELECTRIC',    23); 
-define ('PAGE_BLOGS',       24); 
-define ('PAGE_COLLECTIONS', 26);
-define ('PAGE_SETTINGS',    27);
-define ('PAGE_PLANS',       28);
-define ('PAGE_SPACEX',      29); 
-define ('PAGE_HOME',        30);
 define ('PAGE_CRONOS',      33);
-define ('PAGE_TEDDIES',     34);
-define ('PAGE_DATA',        36);
-define ('PAGE_SCIFI',       37);
-define ('PAGE_MAGAZINE',    38);
-define ('PAGE_DEV',         39);
-define ('PAGE_BLOCS',       40);
-define ('PAGE_CHANNELS',    50);
 define ('PAGE_APPS',        99);
 
 define ('HOME_PAGE',        101);

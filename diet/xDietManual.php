@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $runner_id ="";
+    $runner_id = "";
     if (!empty($_SESSION['runner_id'])) $runner_id =$_SESSION['runner_id'];
     $page = "diet";
     include './includes/dbConnect.inc.php';

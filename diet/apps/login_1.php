@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include ".././includes/dbConnect.inc.php";
+    include "../includes/dbConnect.inc.php";
     
     $username = mysqli_real_escape_string($db, $_POST['dtUser']);
     $password = mysqli_real_escape_string($db, $_POST['dtPass']);

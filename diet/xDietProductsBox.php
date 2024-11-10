@@ -8,6 +8,7 @@
     include './includes/googleSecurity.inc.php';
     include "./includes/settingsStart.inc.php";
     include "./includes/sideMenuHover_1.inc.php";
+    include "./includes/loader.inc.php";
 ?>
 </head>
 <body>
@@ -25,7 +26,6 @@
     
     //--- new content -------------------- 
     
-    //echo "<div class='dietPageContainer'>";
     include "./includes/menu.inc.php"; 
     $submenuType = SUBMENU_PRODUCTS;
     include "./includes/productsMenu.inc.php";

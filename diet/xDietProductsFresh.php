@@ -8,6 +8,7 @@
     include './includes/googleSecurity.inc.php';
     include "./includes/settingsStart.inc.php";
     include "./includes/sideMenuHover_1.inc.php";
+    include "./includes/loader.inc.php";
 
     switch($clean['type']) {
 

@@ -1,8 +1,8 @@
 <?php
     session_start();
-    include ".././includes/dbConnect.inc.php";
-    include "./includes/app.security.inc.php";
-    include "./includes/app.header.inc.php";
+    include "../includes/dbConnect.inc.php";
+    include "../includes/app.security.inc.php";
+    include "../includes/app.header.inc.php";
 ?>
 <script>
     function goSelection()
@@ -40,7 +40,7 @@ $type = empty($clean['type']) ? 0 : $clean['type'];
 
 //--- functions -----------------------
 
-include "./includes/cards.inc.php";
+include "../includes/cards.inc.php";
 
 function GetTitle($type) {
 
@@ -127,5 +127,5 @@ function PrepareSQL($type) {
             </div>
         </main>
 <?php 
-    include "./includes/app.footer.inc.php"; 
+    include "../includes/app.footer.inc.php"; 
 ?>
