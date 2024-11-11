@@ -81,36 +81,38 @@ echo "<thead><tr>".
 $pvalue = array(0.0,0.0,0.0,0.0,0.0);
 $ptotal = array(0.0,0.0,0.0,0.0,0.0);
 
-$sql =  "select dd.Idproduct prod, dd.quantity qty, ".
-                " dp.name pname ".
-        "from diet_user_salad dd ".
-        "join diet_products dp on dp.IDproduct = dd.IDproduct ".
-        "where dd.IDuser = ".$_SESSION['diet_user'];
-$result = mysqli_query($db, $sql);
-while ($row = mysqli_fetch_array($result)) {
+if (!empty($_SESSION['diet_user'])) {
 
-    $insql =  "select dpd.energy energy, dpd.fat fat, dpd.saturates saturates, dpd.sugar sugar, dpd.salt salt ". 
-                "from diet_product_data dpd ".
-                "where dpd.IDproduct = ".$row['prod']." and dpd.unit = 'Ration'";
-    $inresult = mysqli_query($db, $insql);
-    while ($inrow = mysqli_fetch_array($inresult)) {
-        
-        $pvalue[0] = round($row['qty'] * $inrow['energy'], 2);
-        $pvalue[1] = round($row['qty'] * $inrow['fat'], 2);
-        $pvalue[2] = round($row['qty'] * $inrow['saturates'], 2);
-        $pvalue[3] = round($row['qty'] * $inrow['sugar'], 2);
-        $pvalue[4] = round($row['qty'] * $inrow['salt'], 2);
-        
-        echo $rowStart."[<a href='xDietAmanidaDel.php?prd=".$row['prod']."'>Treu</a>]";
-        echo $newCol.$row['pname']."</td>";
-        for ($c = 0; $c < 5; $c++) {
+    $sql =  "select dd.Idproduct prod, dd.quantity qty, ".
+                    " dp.name pname ".
+            "from diet_user_salad dd ".
+            "join diet_products dp on dp.IDproduct = dd.IDproduct ".
+            "where dd.IDuser = ".$_SESSION['diet_user'];
+    $result = mysqli_query($db, $sql);
+    while ($row = mysqli_fetch_array($result)) {
 
-            printf("<td class='number'>%.2f</td>",$pvalue[$c]);
-            $ptotal[$c] += $pvalue[$c];
+        $insql =  "select dpd.energy energy, dpd.fat fat, dpd.saturates saturates, dpd.sugar sugar, dpd.salt salt ". 
+                    "from diet_product_data dpd ".
+                    "where dpd.IDproduct = ".$row['prod']." and dpd.unit = 'Ration'";
+        $inresult = mysqli_query($db, $insql);
+        while ($inrow = mysqli_fetch_array($inresult)) {
+            
+            $pvalue[0] = round($row['qty'] * $inrow['energy'], 2);
+            $pvalue[1] = round($row['qty'] * $inrow['fat'], 2);
+            $pvalue[2] = round($row['qty'] * $inrow['saturates'], 2);
+            $pvalue[3] = round($row['qty'] * $inrow['sugar'], 2);
+            $pvalue[4] = round($row['qty'] * $inrow['salt'], 2);
+            
+            echo $rowStart."[<a href='xDietAmanidaDel.php?prd=".$row['prod']."'>Treu</a>]";
+            echo $newCol.$row['pname']."</td>";
+            for ($c = 0; $c < 5; $c++) {
+
+                printf("<td class='number'>%.2f</td>",$pvalue[$c]);
+                $ptotal[$c] += $pvalue[$c];
+            }
         }
     }
 }
-
 echo "<tfoot>";
 echo $rowStart;
 echo "    </td><td></td>";

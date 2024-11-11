@@ -1,9 +1,10 @@
 <?php
 $_LOCALE = array();
 $_LOCALE['strWelcome'] 			= "Bienvenida";
-$_LOCALE['strStart'] 			= "Empezar";
+$_LOCALE['strStart'] 			= "Empezar el tutorial";
 $_LOCALE['strNextStep'] 		= "Siguiente paso";
 $_LOCALE['strHome'] 		    = "Inicio";
+$_LOCALE['strHomeStart'] 		= "Empieza a utiliar diet";
 $_LOCALE['strReference'] 		= "Referencias";
 $_LOCALE['strDisclaimer'] 		= "Exención de responsabilidad";
 $_LOCALE['strUseThis'] 		    = "Utiliza estas tarjetas:";

@@ -12,7 +12,7 @@ include "./includes/config.inc.php";
     $dd .= "                                            |___/                       ".PHP_EOL;
 ?>
 <!DOCTYPE html>
-<html lang="<?php echo $lang?>">
+<html>
 <head>
     <title>Diari Digital * Cronos</title>  
 

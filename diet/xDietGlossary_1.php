@@ -10,6 +10,11 @@
     include "./includes/sideMenuHover_1.inc.php";
     include "./includes/background.inc.php";
 ?>
+    <style>
+        p {
+            width: 80%;
+        }
+    </style>
     </head>
 <body>
 <?php 
@@ -28,7 +33,6 @@ include "./includes/sideMenuHover_3.inc.php";
 //--- new content -------------------- 
 
 $_SESSION['pageID'] = 0;
-//echo "<div class='dietPageContainer'>";
 include "./includes/settingsEnd.inc.php";
 include "./includes/menu.inc.php"; 
 
@@ -71,9 +75,9 @@ if ($c == 0) {
     echo "No hi ha cap referencia externa.<br>";
 }
 echo "<br>";
-echo "<input type='button' value='  Glossary   ' onclick='location.href=\"xDietGlossary.php\"'>";
+echo "<input type='button' value='  Glossari  ' onclick='location.href=\"xDietGlossary.php\"'>";
 echo "&nbsp;";
-echo "<input type='button' value='  < < < <   ' onclick='history.back()'>";
+echo "<input type='button' value='  Torna  ' onclick='history.back()'>";
 
 $page = ""; // No references link
 include './includes/googleFooter.inc.php';

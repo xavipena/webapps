@@ -8,6 +8,7 @@
     include './includes/googleSecurity.inc.php';
     include "./includes/settingsStart.inc.php";
     include "./includes/sideMenuHover_1.inc.php";
+    include "./includes/loader.inc.php";
 ?>
 </head>
 <body>
@@ -50,8 +51,8 @@ else {
 echo "<div class='round'>Visualització en gràfiques</div>";
 echo "<div class='container'>";
     AddCard("xDietUser_1.php","user","Fitxa d'usuari","Consulta de les dades biomètriques actuals de $user", false, false, false, $disabled);
-    AddCard("xDietOverview.php","plot","Calories","Progrés en consum de calories", false, false, false, $disabled);
-    AddCard("xDietTrace.php","plot","Pes","Evolució del pes real", false, false, false, $disabled);
+    AddCard("xDietOverview.php","plot","Calories","Progrés en consum de calories", false, true, false, $disabled);
+    AddCard("xDietTrace.php","plot","Pes","Evolució del pes real", false, true, false, $disabled);
 echo "</div>";
 
 include './includes/googleFooter.inc.php';

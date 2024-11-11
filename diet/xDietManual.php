@@ -14,6 +14,7 @@
     .paragraph {
         width: 550px;
         text-align: justify;
+        margin-left: 10px;
     }
 </style>
 </head>
@@ -162,7 +163,7 @@
     }
     else {
 
-        echo "<input type='button' value=' ".locale("strHome")."  ' onclick='location.href=\"xDietCover.php\"'>";
+        echo "<input type='button' value=' ".locale("strHomeStart")."  ' onclick='location.href=\"xDietCover.php\"'>";
     }
 
     include './includes/googleFooter.inc.php';

@@ -116,7 +116,7 @@ function locale($key)
 // Config variables
 // --------------------
 
-$cookiesInUse = 'N';
+$cookiesInUse = 'Y';
 $loaderType = DRAGONFLY;
 
 // --------------------

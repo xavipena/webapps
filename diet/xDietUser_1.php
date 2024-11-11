@@ -14,6 +14,7 @@
     include './includes/googleSecurity.inc.php';
     include "./includes/settingsStart.inc.php";
     include "./includes/sideMenuHover_1.inc.php";
+    include "./includes/loader.inc.php";
 ?>
     <style>
         main {
@@ -318,7 +319,7 @@
             echo "<div class='container atop'>";
                 echo "<div class='table details-inline'>".GetUserData($db)."</div>";
                 echo "<div class='table details-inline'>".ListWeight($db);
-                echo "  <div class='parent-div-150'><input class='center-vertical' type='button' onclick='location.href=\"xDietTrace.php\"' value='".locale("strPlotWeight")."'>";
+                echo "  <div class='parent-div-150'><input class='center-vertical' type='button' onclick='javascript:CallURL(\"$element\",\"xDietTrace.php\")' value='".locale("strPlotWeight")."'>";
                 echo "  </div></div>";
                 echo "<div class='table details-inline'>".GetStats($db)."</div>";
                 echo "<div class='table details-inline'>".FormUserWeight()."</div>";
