@@ -64,26 +64,10 @@
 
         if ($range == "") {
             
-            if ($GLOBALS['lang'] == 'ca') {
-
-            echo "<p class='paragraph'>L'objectiu d'aquesta app és el de poder fer una anàlisi nutricional de la ingesta. Per aconseguir-ho cal tenir la informació de tots els àpats ".
-                "fets i així procedir a analitzar els nutrients i veure quina diferència hi ha respecte al que es considera una dieta saludable. ".
-                "No es pretén que sigui, a priori, un procediment per a perdre pes, sino una manera de poder regular la dieta i, en conseqüència, aconseguir el ".
-                "pes correcte.</p>".
-                "<p class='paragraph'>Un dels principis bàsics per a perdre pes, en una persona sana, és el dèficit calòric, és a dir, cremar més calories de les que es generen amb ".
-                "els aliments. Per això l'app permet, a partir de les dades biomètriques, estimar la ingesta calòrica recomanada i establir uns punts de referència. ".
-                "Hi ha tota una documentació associada que ha servit de base per a muntar l'app i per a fer les anàlisis finals.</p>";
-            }
-            else {
-
-                echo "<p class='paragraph'>El objetivo de esta app es el de poder hacer un análisis nutricional de la ingesta. Para conseguirlo es necesario tener la información de todas las comidas ".
-                "hechos y así proceder a analizar los nutrientes y ver qué diferencia hay respecto a lo que se considera una dieta saludable. ".
-                "No se pretende que sea, a priori, un procedimiento para perder peso, sino una forma de poder regular la dieta y, en consecuencia, conseguir el ".
-                "peso correcto.</p>".
-                "<p class='paragraph'>Uno de los principios básicos para perder peso, en una persona sana, es el déficit calórico, es decir, quemar más calorías de las que se generan con ".
-                "los alimentos. Por eso la app permite, a partir de los datos biométricos, estimar la ingesta calórica recomendada y establecer unos puntos de referencia. ".
-                "Existe toda una documentación asociada que ha servido de base para montar la app y para realizar los análisis finales.</p>";
-            }
+            $sql =  "select disclaimer from diet_manual where IDstep = 0 and lang = '".$GLOBALS['lang']."'";
+            $result = mysqli_query($db, $sql);
+            $row = mysqli_fetch_array($result);
+            echo $row['disclaimer'];
         }
         else {
             

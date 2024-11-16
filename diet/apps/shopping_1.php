@@ -5,6 +5,7 @@ Update user weight
 session_start();
 include '../includes/dbConnect.inc.php';
 
+$mal = $_POST['dtMal'];
 $prd = $_POST['dtPrd'];
 $qty = $_POST['dtQty'];
 
@@ -13,7 +14,8 @@ $result = mysqli_query($db, $sql);
 if ($row = mysqli_fetch_array($result)) {
 
     $sql =  "update diet_product_list set".
-            " quantity  = ".$qty.
+            " IDmall    = ".$mal.
+            ",quantity  = ".$qty.
             ",done      = 0".
             " where IDproduct = $prd";
 
@@ -25,7 +27,8 @@ if ($row = mysqli_fetch_array($result)) {
 else 
 {
     $sql =  "insert into diet_product_list set".
-            " IDproduct     = $prd".
+            " IDmall        = $mal".
+            ",IDproduct     = $prd".
             ",quantity      = $qty".
             ",done          = 0";
     

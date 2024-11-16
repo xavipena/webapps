@@ -536,24 +536,27 @@ if ($rows > 0)
     // restricted to admin user
     // ----------------------------
 
-    if ($_SESSION['diet_admin']== 1) {
+    if (!empty($_SESSION['diet_admin'])) {
 
-        echo "<fieldset>";
-        echo "<legend>Replica</legend>";
-        echo "<form id='frmU' method='post' action='xDietSelection_5.php'>";
-        echo "<br><input type='submit' value='Copia '> a l'usuari:&nbsp;";
-        // ----------------------------
-        // selector for users available
-        // ----------------------------
-        $sql = "select * from diet_users where IDuser <> ".$_SESSION['diet_user']." order by name";
-        $result = mysqli_query($db, $sql);
-        echo "<select name='IDuser'>";
-        while ($row = mysqli_fetch_array($result))
-        {
-            echo "<option value='".$row['IDuser']."'>".$row['name']."</option>";
+        if ($_SESSION['diet_admin']== 1) {
+
+            echo "<fieldset>";
+            echo "<legend>Replica</legend>";
+            echo "<form id='frmU' method='post' action='xDietSelection_5.php'>";
+            echo "<br><input type='submit' value='Copia '> a l'usuari:&nbsp;";
+            // ----------------------------
+            // selector for users available
+            // ----------------------------
+            $sql = "select * from diet_users where IDuser <> ".$_SESSION['diet_user']." order by name";
+            $result = mysqli_query($db, $sql);
+            echo "<select name='IDuser'>";
+            while ($row = mysqli_fetch_array($result))
+            {
+                echo "<option value='".$row['IDuser']."'>".$row['name']."</option>";
+            }
+            echo "</select></form>";
+            echo "</fieldset>";
         }
-        echo "</select></form>";
-        echo "</fieldset>";
     }
 
     // ----------------------------

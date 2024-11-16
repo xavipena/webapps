@@ -4,6 +4,13 @@
     include "../includes/app.security.inc.php";
     include "../includes/app.header.inc.php";
 ?>
+    <script>
+        function openList()
+        {
+            var mall = document.getElementById("dtMal").value;
+            window.location.href = "shoppingList.php?mall=" + mall;
+        }
+    </script>
 </head>
 <body>
 <?php 
@@ -27,11 +34,34 @@ function ProdSelector($db)
     return $prodSelector;
 }
 
+function MallSelector($db)
+{
+    $mallSelector  = "<select onchange='' id='dtMal' name='dtMal' data-placeholder='Centre'>";
+    $sql ="select * from diet_malls order by name";
+    $result = mysqli_query($db, $sql);
+    while ($row = mysqli_fetch_array($result)) 
+    {
+        $mallSelector .= "<option value='".$row['IDmall']."'>".$row['name']."</option>";
+    }
+    $mallSelector .= "</select>";
+    return $mallSelector;
+}
+
 function CountProds($db)
 {
-    $sql ="select count(*) as cnt from diet_product_list where done = 0";
+    $countProds = "";
+    $sql =  "select diet_product_list.IDmall, name, count(*) as cnt ".
+            "from diet_product_list ".
+            "join diet_malls on diet_malls.IDmall = diet_product_list.IDmall ".
+            "where done = 0 ".
+            "group by IDmall, name";
     $result = mysqli_query($db, $sql);
-    return mysqli_fetch_array($result)[0]." productes per comprar<br><br>";
+    while ($row = mysqli_fetch_array($result))
+    {
+        $countProds .= $row['cnt']." productes per ".$row['name']."<br>";
+    }
+    $countProds .= "<br>";
+    return $countProds;
 }
 
 //--- Content -------------------------
@@ -49,11 +79,15 @@ function CountProds($db)
             <form action="shopping_1.php" class="app-form" method="post">
 
                 <div class="app-content">
-
+    
                     <div class="app-select">
                     <?php
-                        $meal = empty($_SESSION['meal']) ? "x" : $_SESSION['meal'];
-                        echo ProdSelector($db, $meal);
+                        echo MallSelector($db);
+                    ?>
+                    </div>
+                    <div class="app-select">
+                    <?php
+                        echo ProdSelector($db);
                     ?>
                     </div>
 
@@ -75,7 +109,7 @@ function CountProds($db)
             </form>
             <div class='app-card'>
                 <?php echo CountProds($db)?>
-                <button type="button" class="app-button" onclick="location.href='shoppingList.php'">llista</button>
+                <button type="button" class="app-button" onclick="javascript:openList()">llista</button>
             </div>
         </main>
 

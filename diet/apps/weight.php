@@ -47,38 +47,41 @@ function ListWeight($db)
             </div>
         </header>
         <main>
-
             <form action="../xDietUser_5.php" class="app-form" method="post">
                 <input type='hidden' name='fromApp' value='1'>
-
+                
                 <div class="app-content">
-
+                    
                     <div class="app-box">
                         <i class="ri-calendar-line app-icon"></i>
-
+                        
                         <div class="app-box-input">
                             <input type="date" class="app-input" id="dtDate" name="dtDate" placeholder="" value="<? echo date("Y-m-d")?>">
                             <label for="" class="app-label">Data</label>
                         </div>
                     </div>
-
+                    
                     <div class="app-box">
                         <i class="ri-price-tag-3-line app-icon"></i>
-
+                        
                         <div class="app-box-input">
                             <input type="number" step="any" required class="app-input" value="" placeholder=" " id="dtWeight" name="dtWeight">
                             <label for="" class="app-label">Pes</label>
                         </div>
                     </div>
+                    <button type="submit" class="app-button">Envia</button>
+                    <button type="button" class="app-button" onclick="location.href='menu.php'">Menú</button>
                 </div>
+            </form>
+            
+            <form action="../xDietUser_5.php" class="app-form" method="post">
 
-                <button type="submit" class="app-button">Envia</button>
-                <button type="button" class="app-button" onclick="location.href='menu.php'">Menú</button>
-                
                 <div class="app-content">
-                    <?php echo ListWeight($db); ?>
+                    
+                    <div class="app-content">
+                        <?php echo ListWeight($db); ?>
+                    </div>
                 </div>
-
             </form>
         </main>
 <?php 

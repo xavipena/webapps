@@ -10,19 +10,23 @@
 
 //--- Settings ------------------------
 
+//--- Params --------------------------
+
+$mall = empty($clean['mall']) ? 1 : $clean['mall'];
+
 //--- new content ---------------------
 
 //--- functions -----------------------
 
 function BtnRemove($id) {
 
-    $output = "<input type='button' value='&nbsp;Treu&nbsp;' onclick='location.href=\"shoppingList_1.php?prd=$id\"'>";
+    $output = "<input type='button' value='Treu' onclick='location.href=\"shoppingList_1.php?prd=$id\"'>";
     return $output;
 }
 
 function BtnDone($id) {
 
-    $output = "<input type='button' value='&nbsp;Tinc&nbsp;' onclick='location.href=\"shoppingList_2.php?prd=$id\"'>";
+    $output = "<input type='button' value='Tinc' onclick='location.href=\"shoppingList_2.php?prd=$id\"'>";
     return $output;
 }
 
@@ -38,7 +42,7 @@ function ListProds($db)
     $output .= "<tr><td colspan='4'><hr>".$rowEnd;
     $sql =  "select * from diet_product_list ".
             "inner join diet_products on diet_product_list.IDproduct = diet_products.IDproduct ".
-            "where done = 0";
+            "where IDmall = ".$GLOBALS['mall']." and done = 0";
     $result = mysqli_query($db, $sql);
     while ($row = mysqli_fetch_array($result))
     {        

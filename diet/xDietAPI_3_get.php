@@ -53,6 +53,16 @@
         return array($output,$error,$info);
     }
 
+    function TableHeader($title) {
+
+        echo "<table class='dietcard'>";
+        echo "<caption>$title</caption>";
+        echo "<thead><tr>".
+                    "<th>Item</th>".
+                    "<th>Per 100g</th>".
+            "</tr></thead>";
+    }
+
     function ShowDetails($serving) {
 
         $rowStart   = $GLOBALS['rowStart'];
@@ -79,12 +89,8 @@
         $unit1      = $serving['metric_serving_unit'];
         $unit2      = $serving['metric_serving_unit'] == "g" ? "mg" : "µg";
 
-        echo "<table class='dietcard'>";
-        echo "<caption>Valor nutricional</caption>";
-        echo "<thead><tr>".
-                    "<th>Item</th>".
-                    "<th>Per 100g</th>".
-            "</tr></thead>";
+        echo "<div class='container atop'>";
+        echo TableHeader("Valor nutricional");
         
         echo $rowStart."Calories"    .$newColNum.$calories .$unit1.$rowEnd;
         echo $rowStart."Greix"       .$newColNum.$fat      .$unit1.$rowEnd;
@@ -94,7 +100,9 @@
         echo $rowStart."Fibra"       .$newColNum.$fiber    .$unit1.$rowEnd;
         echo $rowStart."Proteïna"    .$newColNum.$protein  .$unit1.$rowEnd;
         echo $rowStart."Sal"         .$newColNum.$sodium   .$unit1.$rowEnd;
-        echo $rowStart.$newCol.$rowEnd;
+
+        echo TableHeader("Vitamines i minerals");
+        
         echo $rowStart."Colesterol"  .$newColNum.$chole    .$unit2.$rowEnd;
         echo $rowStart."Vitamina A"  .$newColNum.$vitA     .$unit2.$rowEnd;
         echo $rowStart."Vitamina C"  .$newColNum.$vitC     .$unit2.$rowEnd;
@@ -103,6 +111,7 @@
         echo $rowStart."Potassi"     .$newColNum.$potassium.$unit2.$rowEnd;
 
         echo "</table>";
+        echo "</div>";
     }
 
     //--- new content -------------------- 
@@ -158,6 +167,8 @@
     
     list($output, $error, $info) = loadFoods($url);
     if ($error == 0 || $error == "") {
+
+        ShowSQL($output);
 
         if ($info['http_code'] == '200') {
 

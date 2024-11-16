@@ -79,6 +79,14 @@ footer img {
     text-align: left;
     z-index: 3;
 }
+.footerSmallText {
+    position: relative;
+    font-size: 11px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    z-index: 3;
+}
 .footerBackButton {
     position: absolute;
     right: 0px;
