@@ -73,7 +73,10 @@
 
         if ($_SESSION['diet_user'] != "") {
     
-            $user = $_SESSION['username'];
+            if (!empty($_SESSION['username'])) {
+            
+                $user = $_SESSION['username'];
+            }
         }
     }
     if ($user != "") 
