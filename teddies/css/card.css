@@ -1,0 +1,121 @@
+.container {
+
+    width: 95%;
+	/* left: -5%;  align to left and do not overlap back button*/
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+	flex-direction: row;
+    align-items: start;
+    gap: 0.5em;
+	position: relative;
+	z-index: 1;
+}
+.vcontainer {
+
+    display: flex;
+    flex-wrap: wrap;
+	flex-direction: column;
+    align-content: flex-start;
+    gap: 0.5em;
+}
+.card {
+
+    width: 350px;
+    height: 135px;
+    padding: 5px;
+}
+.cardShort {
+
+    width: 350px;
+    height: 110px;
+    padding: 5px;
+}
+.cardWide {
+
+    width: 700px;
+    height: 135px;
+    padding: 5px;
+}
+.cardWideLarge {
+
+    width: 700px;
+	height: auto;
+    padding: 5px;
+}
+.botButton {
+
+	margin-top: 20px;
+    margin-bottom: 10px;
+    right: 0px;
+}
+.cardImageRound {
+	
+	width: 70px;
+	height: 70px;
+	border-radius: 8px;
+	border: 1px solid #fff;
+	opacity: 0.8;
+}
+.cardImageTrans {
+	
+	opacity: 0.3;
+}
+.bookCard {
+    
+	width: 580px;
+    height: 300px;
+    padding: 5px;
+}
+.doc {
+/*
+	display: inline-block;
+	position: relative;
+	left: 5px;
+	top: 5px;
+	width: 110px;
+	text-align: left;
+	*/
+	float: right;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	flex-wrap: nowrap;
+	right: 10px;
+	top: 5px;
+}
+.docItem {
+
+	flex: none;
+	align-self: flex-start;
+}
+.docItem > div {
+
+	/* nested div to reposition element */
+	position: relative;
+	top: 10px;
+}
+.docMulti {
+	display: inline-block;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	width: 300px;
+	text-align: right;
+    z-index: 1;
+}
+.docRight {
+	right: 5px;
+}
+.docTxt {
+	float: left;
+	position: relative;
+	left: 10px;
+	top: 10px;
+}
+.docTxtTop {
+	display: inline-block;
+	position: absolute;
+	left: 130px;
+	top: 5px;
+}
