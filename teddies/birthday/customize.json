@@ -1,0 +1,23 @@
+{
+  "greeting": "Hola",
+  "name": "Mami",
+  "greetingText": "Felicitats !!!!!!",
+  "wishText": "Que tinguis el millor dia ;)",
+  "imagePath": "img/cris.jpg",
+  "text1": "Avui és el teu aniversari!!! :D",
+  "textInChatBox": "Felicitats!! Missatge del Moma i de la Moisy...",
+  "sendButtonLabel": "Send",
+  "text2": "Això és el que voliem fer per tu...",
+  "text3": "Però hem decidit una altra cosa",
+  "text4": "Ara volem fer una cosa",
+  "text4Adjective": "especial",
+  "text5Entry": "Perquè,",
+  "text5Content": "T'estimem molt",
+  "smiley": ":)",
+  "bigTextPart1": "Per",
+  "bigTextPart2": "això",
+  "wishHeading": "Feliç.aniversari!",
+  "outroText": "T'ha agradat?",
+  "replayText": "Clica si vols repetir!",
+  "outroSmiley": ":)"
+}

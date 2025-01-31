@@ -61,7 +61,7 @@
 }
 img {
   
-  max-width: 100%;
+  /* max-width: 100%; */
   border-radius: 0.4rem 0.4rem 0 0;
   display: block;
   margin: auto;

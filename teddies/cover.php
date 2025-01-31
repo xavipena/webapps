@@ -35,17 +35,16 @@
 
         $startHere .= "<br><br>Encara tens $c imatges per assignar!";
     }
-    $stories    = "Seqüències d'imatges que expliquen històries amb els tesddies";
-    $stuff      = "Coses curioses amb pandes";
+    $stories    = "Seqüències d'imatges que expliquen històries amb els teddies";
+    $stuff      = "Coses curioses on hi ha pandes";
     $logIn      = "";
     $logged     = "";
-    $user = "";
+    $user       = "";
 
     echo "<div class='cardContainer'>";
 
     CoverCard("main.php","Inici","Comença aquí",$startHere);
     CoverCard("stories.php","Stories","Aventures",$stories);
-
 
     $sql ="select * from ted_stories order by dateShown limit 1";
     $result = mysqli_query($db4, $sql);
