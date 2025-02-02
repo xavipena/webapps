@@ -14,6 +14,10 @@
 </head>
 <body>
 <?php 
+//--- Params -------------------------
+
+$type = empty($clean['tdTyp']) ? 0 : $clean['tdTyp'];
+
 //--- Settings -----------------------
 
 $_SESSION['pageID'] = PAGE_TEDDIES;
@@ -34,20 +38,34 @@ include "./includes/settingsEnd.inc.php";
 $c = 0;
 echo "<div class='container'>";
 
-ShowActionCard("Catàleg", "catalog.php", "Catàleg de fitxes dels teddies");
-ShowActionCard("Nou", "addNew.php", "Fer la fitxa de un nou teddie");
-ShowActionCard("Enllaços", "links.php", "Enllaços a recursos d'Internet sobre peluixos");
-ShowActionCard("DIP", "dips.php", "Tots els DIPs (Document de Identificació de Peluix)");
-
+echo "<form method='post' action'catalog.php'>";
+echo "<label for='tdTyp'>Per tipus d'animal:&nbsp;</label>";
+echo "<select name='tdTyp'>";
+echo "<option value='0'>Tots</option>";
+$sql = "select * from ted_types order by tname";
+$result = mysqli_query($database, $sql);
+while ($row = mysqli_fetch_array($result)) 
+{
+    $selected = $row['IDtype'] == $type ? "selected" : "";
+    echo "<option value='".$row['IDtype']."' $selected>".$row['tname']."</option>";
+}
+echo "</select>";
+echo "&nbsp;<input type='submit' value='Filtra'>";
+echo "</form>";
 echo "</div>";
+
+echo "<hr>";
+
 echo "<div class='container'>";
 
-if (countOrfan() > 0) {
-    
-    ShowActionCard("Imatges", "setImages.php", "Imatges sense assignar a un teddie");
+$sql = "select * from ted_teddies where status = 'A'";
+if ($type > 0) $sql .= " and IDtype = $type";
+$sql .= " order by name";
+$result = mysqli_query($database, $sql);
+while ($row = mysqli_fetch_array($result)) 
+{
+    teddyID($row);
 }
-ShowActionCard("Tots", "allImages.php", "Totes les imatges");
-
 echo "</div>";
 
 // --- end content -------------------

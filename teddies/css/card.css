@@ -19,6 +19,63 @@
     align-content: flex-start;
     gap: 0.5em;
 }
+
+/* DIP */
+
+.DIPcard {
+
+    width: 400px;
+    height: 300px;
+    padding: 5px;
+}
+.DIPcard td {
+	color: #000000;
+}
+.DIPtitle {
+	
+	color: #ffffff;
+	background-color: rgb(195, 82, 229);
+	font-size: 20px;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.DIPbackground {
+    background-color: rgb(230, 207, 237);
+    border-radius: 10px;
+    border: 1px solid #eeefef33;
+    padding: 2px 5px 5px 10px;
+    position: relative;
+    text-align:left;
+}
+.DIPstamp {
+	
+	opacity: 0.8;
+	rotate: 10deg;
+	z-index: 2;
+	position: relative;
+	top: -110px;
+	left: 130px;
+	overflow: hidden;
+}
+.DIPstampImage {
+	
+	width: 100px;
+}
+.DIPimage {
+	
+	width: 100px;
+	height: 100px;
+	border-radius: 8px;
+	border: 1px solid #3c3c3c;
+}
+.DIPnotes {
+	
+	font-size: 12px;
+}
+
+/* cards */
+
 .card {
 
     width: 350px;
@@ -43,6 +100,76 @@
 	height: auto;
     padding: 5px;
 }
+/* cover card */
+
+.cardContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5em;
+}
+.coverCard {
+
+    width: 350px;
+    height: 400px;
+    background-color: rgba(66, 66, 66, 0.4);
+    border-radius: 10px;
+    border: 1px solid #eceff133;
+    padding: 10px;
+    margin: 3px;
+    position: relative;
+    text-align:left;
+    /* for hovering (mouse out) */
+    transition: 0.3s;
+}
+.coverCard:hover {
+
+    background-color: rgba(100, 100, 100, 0.4);
+    transition: 0.3s;
+}
+.coverImage {
+    
+    display: block;
+    width: 130px;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 1px solid #eceff133;
+}
+.coverCardText {
+
+    font-family: Verdana, Arial rounded;
+    color: lightgray;
+    font-size: 12px;
+    text-decoration: none;
+}
+.cardCircle {
+
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: #ca6386;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+}
+.cardTitle {
+
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+.coverCard a:hover a:visited a:active a:link {
+
+    text-decoration: none;
+}
+
 .botButton {
 
 	margin-top: 20px;
@@ -61,6 +188,13 @@
 	
 	opacity: 0.3;
 }
+.linkImage {
+	
+    width: 340px;
+	border-radius: 10px;
+	border: 1px solid #fff;
+}
+
 .bookCard {
     
 	width: 580px;

@@ -24,6 +24,7 @@ include "./includes/sideMenuHover_2.inc.php";
 include "./includes/sideMenuHover_3.inc.php";
 
 //--- functions ---------------------- 
+include "./includes/functions.inc.php";
 
 function GetTedSize($id) {
 
@@ -33,21 +34,6 @@ function GetTedSize($id) {
     if ($row = mysqli_fetch_array($result)) {
     
         return $row['description'];
-    } 
-    else {
-        
-        return "<span style='color: red;'>Desconegut</span>";
-    }
-}
-
-function GetTedType($id) {
-
-    global $database;
-    $sql = "select * from ted_types where IDtype = $id";
-    $result = mysqli_query($database, $sql);
-    if ($row = mysqli_fetch_array($result)) {
-    
-        return $id > 0 ? $row['tname'] : "<span style='color: red;'>".$row['tname']."</span>";
     } 
     else {
         
@@ -114,25 +100,31 @@ echo "<thead><tr>".
     "</tr></thead>";
 $sql = "select * from ted_teddies where IDted = $ted";
 $result = mysqli_query($database, $sql);
-while ($row = mysqli_fetch_array($result)) {
+$row = mysqli_fetch_array($result);
     
-    $links = "";
-    if (!empty($row['link'])) {
+$links = "";
+if (!empty($row['link'])) {
 
-        $links = "<a href='".$row['link']."'>Viatge</a>";
-    }
-
-    $currentName = $row['name'];
-    echo $rowStart."Nom".$newCol.$row['name']."</td><td rowspan='4' valign='top'>".$row['remarks'].$rowEnd;
-    echo $rowStart."Data".$newCol.$row['adquiredDate'].$rowEnd;
-    echo $rowStart."Preu".$newCol.$row['price']."€ ".$rowEnd;
-    echo $rowStart."Mida".$newCol.GetTedSize($row['IDsize']).$rowEnd;
-    echo $rowStart."Tipus".$newCol.GetTedType($row['IDtype'])."<td rowspan='2' valign='top'>".$links.$rowEnd;
-    echo $rowStart."Estat".$newCol.GetTedStatus($row['status']).$rowEnd;
-    echo $rowStart."Origen".$newCol.$row['origin']."<td rowspan='2' valign='top'>Amics:<br>".GetFriends($ted).$rowEnd;
-    echo $rowStart."Marca".$newCol.GetTedVendor($row['vendor']).$rowEnd;
+    $links = "<a href='".$row['link']."'>Viatge</a>";
 }
+
+$currentName = $row['name'];
+echo $rowStart."Nom".$newCol.$row['name']."</td><td rowspan='4' valign='top'>".$row['remarks'].$rowEnd;
+echo $rowStart."Data".$newCol.$row['adquiredDate'].$rowEnd;
+echo $rowStart."Preu".$newCol.$row['price']."€ ".$rowEnd;
+echo $rowStart."Mida".$newCol.GetTedSize($row['IDsize']).$rowEnd;
+echo $rowStart."Tipus".$newCol.GetTedType($row['IDtype'])."<td rowspan='2' valign='top'>".$links.$rowEnd;
+echo $rowStart."Estat".$newCol.GetTedStatus($row['status']).$rowEnd;
+echo $rowStart."Origen".$newCol.$row['origin']."<td rowspan='2' valign='top'>Amics:<br>".GetFriends($ted).$rowEnd;
+echo $rowStart."Marca".$newCol.GetTedVendor($row['vendor']).$rowEnd;
+
 echo "</table>";
+
+// --------------------------------
+// DIP - document Identificació Peluix
+// --------------------------------
+
+teddyID($row);
 
 // --------------------------------
 // birthday
@@ -147,13 +139,6 @@ if(date('m-d') == date('m-d', $time)) {
     echo "</div>";
 }
 
-if (!empty($row['link'])) {
-
-    echo "<div class='adventure'>"; 
-    echo "<a href='".$row['link']."'>Aventures</a>";
-    echo "</div>";
-}
-
 echo "</div>";
 
 // --------------------------------
@@ -163,12 +148,12 @@ echo "</div>";
 $newID = 1;
 $sql = "select IDted from ted_teddies where name > '$currentName' order by name";
 $result = mysqli_query($database, $sql);
-if ($row = mysqli_fetch_array($result)) {
-
-    $newID = $row['IDted'];
+if ($row2 = mysqli_fetch_array($result)) {
+    
+    $newID = $row2['IDted'];
 }
 else {
-
+    
     $sql = "select IDted from ted_teddies order by name limit 1";
     $result = mysqli_query($database, $sql);
     $newID = mysqli_fetch_array($result)[0];
@@ -180,6 +165,10 @@ echo "<div class='container'>";
 echo "<input type='button' value=' Modifca-ho ' onclick='location.href=\"addNew.php?id=$ted\"'>";
 echo "<input type='button' value=' Següent teddy ' onclick='location.href=\"details.php?id=$newID\"'>";
 echo "<input type='button' value=' Torna al catàleg ' onclick='location.href=\"catalog.php\"'>";
+if (!empty($row['link'])) {
+
+    echo "<input type='button' value=' Aventures ' onclick='location.href=\"".$row['link']."\"'>";
+}
 
 echo "</div>";
 

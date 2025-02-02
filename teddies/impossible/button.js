@@ -76,7 +76,7 @@ const {
           SOUNDS.GROAN.play();
           set(swearRef.current, { display: 'block' });
 
-          if (count > angerLimit + 2) {
+          if (count > angerLimit + 3) {
             window.location.href = "../secret";
           }
         };
